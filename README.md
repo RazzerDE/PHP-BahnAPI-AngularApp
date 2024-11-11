@@ -29,7 +29,7 @@
 
 › This project was developed by Yannic Drews & Yanic Döpner for a project work in their training as IT specialists for application development - some parts of the project are on german because that's the language that was specified for the project work.
 
-## 🪛 Features
+## 🧮 Features
 › `PHP-BahnAPI-AngularApp` provides a set of fundamental features that can assist you in handling APIs in general in PHP, thereby facilitating your learning process on how to manage them effectively. In our small project we used the **[BahnAPI](https://developers.deutschebahn.com/db-api-marketplace/apis/frontpage)** as example.
 <br />
 
@@ -44,7 +44,7 @@ It supports following <strong>features</strong>:
 ## 🔨 Installation
 › Before you can start exploring our small website for learning purposes, there are a few preparations you need to make.
 
-💡 › You will need a <strong>few registered Plans from the **[BahnAPI](https://developers.deutschebahn.com/db-api-marketplace/apis/frontpage)**:<br /><br />
+💡 › You will need a <strong>few registered Plans from the **[BahnAPI](https://developers.deutschebahn.com/db-api-marketplace/apis/frontpage)**:<br />
 - **[Free Timetables](https://developers.deutschebahn.com/db-api-marketplace/apis/product/26497)**
 - **[StaDa - Station Data](https://developers.deutschebahn.com/db-api-marketplace/apis/product/145141)**
 - **[FaSta - Station Facilities Status](https://developers.deutschebahn.com/db-api-marketplace/apis/product/130978)**
