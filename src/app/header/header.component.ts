@@ -5,13 +5,14 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  isSideMenuOpen = false;
   isDark: boolean = this.getThemeFromLocalStorage();
 
-  constructor() {}
+  constructor() {
+    this.toggleTheme();
+  }
 
   /**
    * Retrieves the theme preference from local storage or the user's system settings.
@@ -19,8 +20,8 @@ export class HeaderComponent {
    * @returns {boolean} - `true` if the theme is dark, otherwise `false`.
    */
   getThemeFromLocalStorage(): boolean {
-    if (localStorage.getItem('isDark') != null) {
-      return localStorage.getItem('isDark') === true.toString();
+    if (localStorage.getItem('dark')) {
+      return localStorage.getItem('dark') === true.toString();
     }
 
     // check user's system theme
@@ -28,17 +29,20 @@ export class HeaderComponent {
   }
 
   /**
-   * Toggles the state of the side menu.
-   * If the side menu is currently open, it will be closed.
-   * If the side menu is currently closed, it will be opened.
+   * Toggles the theme between light and dark mode.
    */
-  toggleSideMenu(): void {
-    this.isSideMenuOpen = !this.isSideMenuOpen;
-  }
+  toggleTheme(change?: boolean): void {
+    if (change) {
+      this.isDark = !this.isDark;
+      window.localStorage.setItem('dark', this.isDark.toString());
+    }
 
-  toggleTheme(): void {
-    this.isDark = !this.isDark;
-    localStorage.setItem('isDark', this.isDark.toString());
+    // change page theme
+    if (this.isDark) {
+      document.querySelector("html")!.classList.add('dark');
+    } else {
+      document.querySelector("html")!.classList.remove('dark');
+    }
   }
 
 }
