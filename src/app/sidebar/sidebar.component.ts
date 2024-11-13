@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
+import {Component} from '@angular/core';
+import {NgClass, NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
+import {PageItemComponent} from "../util/page-item/page-item.component";
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
   imports: [
     NgOptimizedImage,
-    RouterLink
+    RouterLink,
+    NgClass,
+    PageItemComponent
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
-export class SidebarComponent {
-  protected readonly document = document;
-}
+export class SidebarComponent {}
