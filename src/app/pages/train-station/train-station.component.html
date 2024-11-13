@@ -10,7 +10,16 @@
 
   <div class="grid grid-cols-2 gap-4 mt-11">
     <p>Überschrieft Tabelle</p>
-    <input type="text" placeholder="Bahnhof" class="justify-self-end">
+
+    <div class="justify-self-end flex items-center">
+      <svg class="w-5 h-5 text-gray-500 dark:text-gray-200 mr-2 cursor-pointer" fill="none" stroke="currentColor"
+           stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+      <input type="text" placeholder="Bahnhof suche"
+             class="p-2 rounded-lg dark:bg-gray-700 border border-gray-500/10 bg-gray-100
+                  outline-none focus:border-red-700 focus:border-2 selection:bg-red-700/30">
+    </div>
   </div>
 
   <table class="min-w-full divide-y divide-gray-500 mt-6">
