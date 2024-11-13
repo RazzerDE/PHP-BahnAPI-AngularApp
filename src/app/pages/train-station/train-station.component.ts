@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './train-station.component.css'
 })
 export class TrainStationComponent {
+  public currentTrainStation: string = "Mageburg Hbf";
 
 }

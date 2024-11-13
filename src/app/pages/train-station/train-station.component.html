@@ -1,45 +1,54 @@
 <div class="dark:text-white">
   <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Detailierte Ansicht von Bahnhöfen</h2>
 
-  <div class="dark:bg-gray-800 rounded-lg flex items-center p-4 w-96 shadow-xs bg-gray-100 mt-12">
-    <p>Diese Seite bietet eine detaillierte Ansicht der Bahnhöfe, einschließlich ihrer Adressen, Betreiber,
+  <div class="flex items-center p-4 mb-8 text-sm font-semibold text-purple-100 bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">
+    <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
+      <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.523,0 -10,4.477 -10,10c0,5.523 4.477,10 10,10c5.523,0 10,-4.477 10,-10c0,-5.523 -4.477,-10 -10,-10zM12,17v0c-0.552,0 -1,-0.448 -1,-1v-4c0,-0.552 0.448,-1 1,-1v0c0.552,0 1,0.448 1,1v4c0,0.552 -0.448,1 -1,1zM12.5,9h-1c-0.276,0 -0.5,-0.224 -0.5,-0.5v-1c0,-0.276 0.224,-0.5 0.5,-0.5h1c0.276,0 0.5,0.224 0.5,0.5v1c0,0.276 -0.224,0.5 -0.5,0.5z"></path></g></g>
+    </svg>
+
+    <p>
+      Diese Seite bietet eine detaillierte Ansicht der Bahnhöfe, einschließlich ihrer Adressen, Betreiber,
        Internetverfügbarkeit, Barrierefreiheit und lokalen Transportmöglichkeiten.
     </p>
 
   </div>
 
-  <div class="grid grid-cols-2 gap-4 mt-11">
-    <p>Überschrieft Tabelle</p>
+  <div class="grid grid-cols-2 gap-4 mt-11 items-center">
+    <p>Aktueller Bahnhof: <span class="text-red-600 font-semibold">{{currentTrainStation}}</span></p>
 
-    <div class="justify-self-end flex items-center">
-      <svg class="w-5 h-5 text-gray-500 dark:text-gray-200 mr-2 cursor-pointer" fill="none" stroke="currentColor"
-           stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-      </svg>
-      <input type="text" placeholder="Bahnhof suche"
-             class="p-2 rounded-lg dark:bg-gray-700 border border-gray-500/10 bg-gray-100
-                  outline-none focus:border-red-700 focus:border-2 selection:bg-red-700/30">
+    <div class="flex justify-center flex-1 justify-self-end h-10">
+      <div class="relative mr-6 focus-within:text-red-500">
+        <div class="absolute inset-y-0 flex items-center pl-2">
+          <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <input class="w-full h-10 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0
+        rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600
+        dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:outline-none
+        focus:shadow-outline-purple form-input" type="text" placeholder="Bahnhof suche" aria-label="Search">
+      </div>
     </div>
   </div>
 
-  <table class="min-w-full divide-y divide-gray-500 mt-6">
-    <thead class="bg-gray-300 dark:bg-gray-700">
-    <tr>
-      <th scope="col" class="px-6 py-3 text-left text-ml font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Adresse/Koordinaten</th>
-      <th scope="col" class="px-6 py-3 text-left text-ml font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Betreiber</th>
-      <th scope="col" class="px-6 py-3 text-left text-ml font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">Internet vorhanden</th>
-      <th scope="col" class="px-6 py-3 text-left text-ml font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">barrierefrei</th>
-      <th scope="col" class="px-6 py-3 text-left text-ml font-medium text-gray-500 dark:text-gray-200 uppercase tracking-wider">has localTransport</th>
+  <table class="w-full whitespace-no-wrap mt-6">
+    <thead>
+    <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+      <th class="px-4 py-3">Adresse/Koordinaten</th>
+      <th class="px-4 py-3">Betreiber</th>
+      <th class="px-4 py-3">Internet vorhanden</th>
+      <th class="px-4 py-3">barrierefrei</th>
+      <th class="px-4 py-3">hat lokale Transportmöglichkeiten</th>
     </tr>
     </thead>
-    <tbody class="bg-gray-200 hover:bg-gray-200/60 dark:bg-gray-800 dark:hover:bg-gray-800/60 divide-y divide-gray-500">
+    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
 
-    <tr>
-      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">123 Main St, 40.7128° N, 74.0060° W</td>
-      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">Company A</td>
-      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">Yes</td>
-      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">Yes</td>
-      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">Yes</td>
+    <tr class="text-gray-700 dark:text-gray-400">
+      <td class="px-4 py-3">123 Main St, 40.7128° N, 74.0060° W</td>
+      <td class="px-4 py-3">Company A</td>
+      <td class="px-4 py-3">Yes</td>
+      <td class="px-4 py-3">Yes</td>
+      <td class="px-4 py-3">Yes</td>
     </tr>
 
     </tbody>
