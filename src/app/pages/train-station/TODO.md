@@ -1,5 +1,5 @@
 # Train Station Design TODO
-- [ ] add title
-- [ ] add description
+- [x] add title
+- [x] add description
 - [ ] design search field
 - [ ] add table title
