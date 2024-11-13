@@ -5,11 +5,14 @@
     </a>
     <ul class="mt-6">
       <li class="relative px-6 py-3">
-        @if (document.location.pathname == "/") {
-          <span class="absolute inset-y-0 left-0 w-1 bg-red-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
-        }
-        <a routerLink="/" class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors
-                                 duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100">
+        <span class="absolute inset-y-0 left-0 w-1 bg-red-600 rounded-tr-lg rounded-br-lg opacity-0 transform
+                     scale-y-0 transition-all duration-300 ease-in-out" aria-hidden="true"
+              [class.!opacity-100]="router.url == '/' && isLoaded"
+              [class.!translate-x-0]="router.url == '/' && isLoaded"
+              [class.!scale-y-100]="router.url == '/' && isLoaded"></span>
+        <a routerLink="/" class="inline-flex items-center w-full text-sm font-semibold transition-colors
+                                 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+           [ngClass]="router.url == '/' && isLoaded ? 'text-gray-800 dark:text-gray-100' : ''">
 
           <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -25,11 +28,14 @@
     </ul>
     <ul>
       <li class="relative px-6 py-3">
-        @if (document.location.pathname == "/train-station") {
-          <span class="absolute inset-y-0 left-0 w-1 bg-red-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
-        }
+        <span class="absolute inset-y-0 left-0 w-1 bg-red-600 rounded-tr-lg rounded-br-lg opacity-0 transform
+                     scale-y-0 transition-all duration-300 ease-in-out" aria-hidden="true"
+              [class.!opacity-100]="router.url === '/train-station' && isLoaded"
+              [class.!translate-x-0]="router.url === '/train-station' && isLoaded"
+              [class.!scale-y-100]="router.url === '/train-station' && isLoaded"></span>
         <a routerLink="/train-station" class="inline-flex items-center w-full text-sm font-semibold transition-colors
-                                              duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                              duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+           [ngClass]="router.url == '/train-station' && isLoaded ? 'text-gray-800 dark:text-gray-100' : ''">
 
           <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,11 +50,14 @@
       </li>
 
       <li class="relative px-6 py-3">
-        @if (document.location.pathname == "/statistics") {
-          <span class="absolute inset-y-0 left-0 w-1 bg-red-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
-        }
+        <span class="absolute inset-y-0 left-0 w-1 bg-red-600 rounded-tr-lg rounded-br-lg opacity-0 transform
+                     scale-y-0 transition-all duration-300 ease-in-out" aria-hidden="true"
+              [class.!opacity-100]="router.url === '/statistics' && isLoaded"
+              [class.!translate-x-0]="router.url === '/statistics' && isLoaded"
+              [class.!scale-y-100]="router.url === '/statistics' && isLoaded"></span>
         <a routerLink="/statistics" class="inline-flex items-center w-full text-sm font-semibold transition-colors
-                                           duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                           duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+           [ngClass]="router.url == '/statistics' && isLoaded ? 'text-gray-800 dark:text-gray-100' : ''">
 
           <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
