@@ -1,22 +1,16 @@
 <div class="dark:text-white">
   <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Detailierte Ansicht von Bahnhöfen</h2>
 
-  <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-    <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0,0,256,256">
-      <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="bold" font-size="none" text-anchor="end" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.523,0 -10,4.477 -10,10c0,5.523 4.477,10 10,10c5.523,0 10,-4.477 10,-10c0,-5.523 -4.477,-10 -10,-10zM12,17v0c-0.552,0 -1,-0.448 -1,-1v-4c0,-0.552 0.448,-1 1,-1v0c0.552,0 1,0.448 1,1v4c0,0.552 -0.448,1 -1,1zM12.5,9h-1c-0.276,0 -0.5,-0.224 -0.5,-0.5v-1c0,-0.276 0.224,-0.5 0.5,-0.5h1c0.276,0 0.5,0.224 0.5,0.5v1c0,0.276 -0.224,0.5 -0.5,0.5z"></path></g></g>
-    </svg>
-
-    <p>
-      Diese Seite bietet eine detaillierte Ansicht der Bahnhöfe, einschließlich ihrer Adressen, Betreiber,
-       Internetverfügbarkeit, Barrierefreiheit und lokalen Transportmöglichkeiten.
-    </p>
-
-  </div>
+    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        Diese Seite bietet eine detaillierte Ansicht der Bahnhöfe, einschließlich ihrer Adressen, Betreiber,
+        Internetverfügbarkeit, Barrierefreiheit und lokalen Transportmöglichkeiten.
+      </p>
+    </div>
 
   <div class="grid grid-cols-2 gap-4 mt-11 items-center">
-    <div>
-      <p>Aktueller Bahnhof: <span class="text-red-600 font-semibold">{{currentTrainStation}}</span></p>
-    </div>
+
+    <h3 class="text-xl font-semibold">Aktueller Bahnhof: <h3 class="text-red-600">{{currentTrainStation}}</h3></h3>
 
     <div class="flex justify-center flex-1 justify-self-end h-10">
       <div class="relative mr-6 focus-within:text-red-500">
