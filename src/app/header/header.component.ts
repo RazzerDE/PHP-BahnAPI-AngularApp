@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SidebarMobileService} from "../services/sidebar-mobile.service";
 
 @Component({
   selector: 'app-header',
@@ -7,42 +8,50 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {
-  isDark: boolean = this.getThemeFromLocalStorage();
+export class HeaderComponent implements OnInit {
+  isDark: boolean;
 
-  constructor() {
-    this.toggleTheme();
+  constructor(protected sidebarService: SidebarMobileService) {
+    this.isDark = this.getThemeFromLocalStorage();
   }
+
+  ngOnInit(): void { this.applyTheme(); }
 
   /**
    * Retrieves the theme preference from local storage or the user's system settings.
    *
    * @returns {boolean} - `true` if the theme is dark, otherwise `false`.
    */
-  getThemeFromLocalStorage(): boolean {
-    if (localStorage.getItem('dark')) {
-      return localStorage.getItem('dark') === true.toString();
+  private getThemeFromLocalStorage(): boolean {
+    const darkMode = localStorage.getItem('dark');
+    if (darkMode !== null) {
+      return darkMode === 'true';
     }
 
     // check user's system theme
-    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
   }
 
   /**
    * Toggles the theme between light and dark mode.
    */
-  toggleTheme(change?: boolean): void {
-    if (change) {
-      this.isDark = !this.isDark;
-      window.localStorage.setItem('dark', this.isDark.toString());
-    }
-
-    // change page theme
-    if (this.isDark) {
-      document.querySelector("html")!.classList.add('dark');
-    } else {
-      document.querySelector("html")!.classList.remove('dark');
-    }
+  toggleTheme(): void {
+    this.isDark = !this.isDark;
+    localStorage.setItem('dark', this.isDark.toString());
+    this.applyTheme();
   }
 
+  /**
+   * Applies the current theme to the document
+   */
+  private applyTheme(): void {
+    const html: HTMLHtmlElement = document.querySelector('html') as HTMLHtmlElement;
+    if (html) {
+      if (this.isDark) {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
+    }
+  }
 }
