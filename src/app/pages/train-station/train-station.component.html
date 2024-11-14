@@ -12,14 +12,14 @@
     </div>
 
   <!-- Current Train-Station indicator & Searchbar -->
-  <div class="grid grid-cols-2 gap-4 mt-11 items-center">
+  <div class="grid grid-cols-2 gap-4 mt-11 mb-0 items-center">
 
     <!-- Current Train-Station indicator -->
-    <h3 class="text-lg font-semibold">Aktueller Bahnhof: <span class="text-red-600">{{currentTrainStation}}</span></h3>
+    <h3 class="text-lg font-semibold">Aktueller Bahnhof: <span class="text-red-700">{{currentTrainStation}}</span></h3>
 
     <!-- Searchbar -->
     <div class="flex justify-center flex-1 justify-self-end h-10 mb-2">
-      <div class="relative mr-6 focus-within:text-red-500">
+      <div class="relative focus-within:text-red-500">
         <div class="absolute inset-y-0 flex items-center pl-2">
 
           <!-- Search-Icon -->
@@ -29,7 +29,7 @@
         </div>
 
         <!-- Search-Input -->
-        <input class="w-full h-10 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0
+        <input class="mt-0 w-full h-10 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0
         rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600
         dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:outline-none
         focus:shadow-outline-purple form-input" type="text" placeholder="Bahnhof suche" aria-label="Search">
