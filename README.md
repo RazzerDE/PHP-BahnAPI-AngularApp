@@ -1,5 +1,5 @@
 <h1 align="center">
-     📡 PHP-BahnAPI-AngularAPI ~ Learn to work with APIs
+     📡 BahnAPI-AngularApp ~ Learn to work with APIs
 </h1>
 
 <!--<p align="center">
@@ -10,10 +10,10 @@
 </p>-->
 
 <h4 align="center">
-  <a href="https://www.php.net/releases/8.3/en.php">
-    <img src="https://img.shields.io/badge/version-PHP_8.3-27ae60?style=for-the-badge" alt="php version" style="height: 25px;">
+  <a href="https://angular.dev/">
+    <img src="https://img.shields.io/badge/version-Angular_18-27ae60?style=for-the-badge" alt="php version" style="height: 25px;">
   </a>
-  <a href="https://www.php.net/releases/8.3/en.php">
+  <a href="https://developers.deutschebahn.com/db-api-marketplace/apis/frontpage">
     <img src="https://img.shields.io/badge/API_Service-Bahn_API-2980b9?style=for-the-badge" alt="php version" style="height: 25px;">
   </a>
   <a href="https://discord.gg/bl4cklist">
@@ -23,20 +23,21 @@
 </h4>
 
 ## 🗯️ Introduction
-› This project is centered around the development of a user-friendly website. The website was crafted using HTML, CSS, JavaScript, and PHP, which are some of the most powerful and widely-used languages in web development. 
+› This project is centered around the development of a user-friendly website. The website was crafted using HTML, CSS and TypeScript (JavaScript), which are some of the most powerful and widely-used languages in web development. 
 
 🤔 - The <strong>primary function</strong> of this website is to have a small website/web app at the end where a user can display the arrival and departure times of a desired station. It should also show whether there is an elevator at the desired station.
 
 › This project was developed by Yannic Drews & Yanic Döpner for a project work in their training as IT specialists for application development - some parts of the project are on german because that's the language that was specified for the project work.
 
 ## 🧮 Features
-› `PHP-BahnAPI-AngularApp` provides a set of fundamental features that can assist you in handling APIs in general in PHP, thereby facilitating your learning process on how to manage them effectively. In our small project we used the **[BahnAPI](https://developers.deutschebahn.com/db-api-marketplace/apis/frontpage)** as example.
+› `BahnAPI-AngularApp` provides a set of fundamental features that can assist you in handling APIs in typescript, thereby facilitating your learning process on how to manage them effectively. In our small project we used the **[BahnAPI](https://developers.deutschebahn.com/db-api-marketplace/apis/frontpage)** as example.
 <br />
 
 📢 › This project is designed to be <strong>compatible down to PHP 5.6</strong> and has been tested on both <strong>XAMPP</strong> and <strong>IntelliJ’s built-in web server</strong>.<br /><br />
 
 It supports following <strong>features</strong>:
 <ul>
+  <li>📱 <strong>Responsive Website-Design</strong>: Our website is designed to be responsive on all devices.</li>
   <li>🎨 <strong>Optimized Tailwind-CSS</strong>: We used Tailwind-CSS to reduce the amount of loaded CSS and to keep things responsive.</li>
   <br />
 </ul>
@@ -51,5 +52,5 @@ It supports following <strong>features</strong>:
 
 Then, follow these steps to ensure everything runs smoothly:
 1. Create an application on the DB API Marketplace & add the plans above to it.
-2. Set your <strong>correct API login credentials</strong> in `assets/php/main.php`
+2. Set your <strong>correct API login credentials</strong> in `.env`
 3. Start the Webserver and have FUN!
