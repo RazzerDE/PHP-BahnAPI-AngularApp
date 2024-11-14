@@ -1,36 +1,46 @@
-<aside class="z-20 w-64 overflow-y-auto bg-white dark:bg-gray-800 flex-shrink-0 h-full
-              transition-transform duration-300 ease-in-out"
-       [ngClass]="{'-translate-x-full fixed md:relative md:translate-x-0': !sidebarService.isMobileMenuOpen,
-            'translate-x-0 absolute inset-y-0 mt-16 left-0 w-full md:hidden': sidebarService.isMobileMenuOpen}">
-  <div class="py-4 text-gray-500 dark:text-gray-400">
-    <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" routerLink="/">
-      <img ngSrc="assets/img/db-logo.png" height="2160" width="3840" class="w-14 h-10 inline" alt="Logo"> BahnAPI mit PHP
-    </a>
-    <ul class="mt-6">
-      <sidebar-page-item [redirect_url]="'/'" [site_name]="'Startseite'"
-                         [icon_path]="'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 ' +
-                          '1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'">
-      </sidebar-page-item>
-    </ul>
+<!-- Backdrop (make BG Darker) -->
+@if (sidebarService.isMobileMenuOpen) {
+  <div class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center top-4.3"></div>
+}
 
-    <ul>
-      <sidebar-page-item [redirect_url]="'/train-station'" [site_name]="'Bahnhöfe (Detailiert)'"
-                         [icon_path]="'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 ' +
-                          '002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'">
-      </sidebar-page-item>
+<!-- Sidebar creation with Mobile Support & Animations -->
+<div class="z-20 overflow-hidden bg-white dark:bg-gray-800 flex-shrink-0 h-full
+            transition-all duration-300 ease-in-out fixed"
+     [ngClass]="{'w-0 md:relative md:w-64 top-14 md:top-0': !sidebarService.isMobileMenuOpen,
+                 'w-64 inset-y-0 mt-16 left-0 top-1 md:hidden': sidebarService.isMobileMenuOpen}">
 
-      <sidebar-page-item [redirect_url]="'/statistics'" [site_name]="'Interessante Statistiken'"
-                         [icon_path]="'M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z'">
-      </sidebar-page-item>
-    </ul>
+  <!-- Content of Sidebar -->
+  <aside class="w-64 h-full overflow-y-auto">
+    <div class="py-4 text-gray-500 dark:text-gray-400">
+      <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" routerLink="/">
+        <img ngSrc="assets/img/db-logo.png" height="2160" width="3840" class="w-14 h-10 inline" alt="Logo"> BahnAPI & Angular
+      </a>
+      <ul class="mt-6">
+        <sidebar-page-item [redirect_url]="'/'" [site_name]="'Startseite'"
+                           [icon_path]="'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 ' +
+                            '1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'">
+        </sidebar-page-item>
+      </ul>
 
-    <!-- Cache button -->
-    <div class="px-6 my-6">
-      <button class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white
-      transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600
-      hover:bg-red-700 focus:outline-none focus:shadow-outline-purple">
-        Cache neuladen
-      </button>
+      <ul>
+        <sidebar-page-item [redirect_url]="'/train-station'" [site_name]="'Bahnhöfe (Detailiert)'"
+                           [icon_path]="'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 ' +
+                            '002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'">
+        </sidebar-page-item>
+
+        <sidebar-page-item [redirect_url]="'/statistics'" [site_name]="'Interessante Statistiken'"
+                           [icon_path]="'M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z'">
+        </sidebar-page-item>
+      </ul>
+
+      <!-- Cache button -->
+      <div class="px-6 my-6">
+        <button class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white
+        transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600
+        hover:bg-red-700 focus:outline-none focus:shadow-outline-purple">
+          Cache neuladen
+        </button>
+      </div>
     </div>
-  </div>
-</aside>
+  </aside>
+</div>
