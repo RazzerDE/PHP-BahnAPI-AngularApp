@@ -23,3 +23,72 @@
   </p>
 </div>
 
+<!-- Input Field -->
+<div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+  <!-- First Line (Input & Button) -->
+  <div class="flex justify-between gap-x-6">
+    <div class="relative text-gray-500 focus-within:text-red-600 dark:focus-within:text-red-400 w-full">
+      <input class="block w-full !pl-9 mt-1 text-sm text-black dark:text-gray-300 dark:border-gray-600
+    dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red input-box
+    dark:focus:shadow-outline-gray" placeholder="Name des Bahnhofs..">
+      <div class="absolute inset-y-0 flex items-center ml-2 pointer-events-none">
+        <svg class="w-5 h-5 mt-1" aria-hidden="true" fill="#6b7280" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 297 297" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M148.5,0C87.43,0,37.747,49.703,37.747,110.797c0,91.026,99.729,179.905,103.976,183.645
+      c1.936,1.705,4.356,2.559,6.777,2.559c2.421,0,4.841-0.853,6.778-2.559c4.245-3.739,103.975-92.618,103.975-183.645
+      C259.253,49.703,209.57,0,148.5,0z M148.5,272.689c-22.049-21.366-90.243-93.029-90.243-161.892
+      c0-49.784,40.483-90.287,90.243-90.287s90.243,40.503,90.243,90.287C238.743,179.659,170.549,251.322,148.5,272.689z"/>
+          <path d="M148.5,59.183c-28.273,0-51.274,23.154-51.274,51.614c0,28.461,23.001,51.614,51.274,51.614
+      c28.273,0,51.274-23.153,51.274-51.614C199.774,82.337,176.773,59.183,148.5,59.183z M148.5,141.901
+      c-16.964,0-30.765-13.953-30.765-31.104c0-17.15,13.801-31.104,30.765-31.104c16.964,0,30.765,13.953,30.765,31.104
+      C179.265,127.948,165.464,141.901,148.5,141.901z"/>
+        </svg>
+      </div>
+    </div>
+    <div>
+      <button class="flex items-center justify-between px-4 py-2 text-sm font-medium text-white transition-colors
+        duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700
+        focus:outline-none focus:shadow-outline-red cp-0.5 h-full mt-0.5">
+        <svg class="w-4 h-4 mr-2 -ml-1" fill="none" stroke="#FFFFFF" aria-hidden="true" viewBox="0 0 488.4 488.4"
+              xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="25">
+        <path d="M0,203.25c0,112.1,91.2,203.2,203.2,203.2c51.6,0,98.8-19.4,134.7-51.2l129.5,129.5c2.4,2.4,5.5,3.6,8.7,3.6
+s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-129.6-129.5c31.8-35.9,51.2-83,51.2-134.7c0-112.1-91.2-203.2-203.2-203.2
+S0,91.15,0,203.25z M381.9,203.25c0,98.5-80.2,178.7-178.7,178.7s-178.7-80.2-178.7-178.7s80.2-178.7,178.7-178.7
+S381.9,104.65,381.9,203.25z"/>
+        </svg>
+        <span>Suchen</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Second Line (Date & Route Setting) -->
+  <div class="relative flex flex-nowrap justify-between">
+    <div class="mt-6 ml-2 block">
+      <button class="flex w-auto flex-col text-gray-400">
+        <div class="flex h-14">
+         <svg class="w-5 h-5 mr-2 -ml-1 mt-0.5" fill="none" stroke="#6b7280" aria-hidden="true" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+           <path d="M3 10H21M7 3V5M17 3V5M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903
+           20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569
+           20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569
+           5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799
+           19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" />
+         </svg>
+          <h2 class="m-0 pl-1.5 whitespace-nowrap leading-6 font-bold">Heute, ab 14:52</h2>
+          <!-- TODO -->
+<!--          <svg class="w-4 h-4 mr-2 -ml-1 mt-1" fill="none" stroke="#FFFFFF" aria-hidden="true" viewBox="0 0 20 20"-->
+<!--               xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
+<!--            <path d="M249.365851,6538.70769 L249.365851,6538.70769 C249.770764,6539.09744 250.426289,6539.09744-->
+<!--            250.830166,6538.70769 L259.393407,6530.44413 C260.202198,6529.66364 260.202198,6528.39747 259.393407,6527.61699-->
+<!--            L250.768031,6519.29246 C250.367261,6518.90671 249.720021,6518.90172 249.314072,6519.28247 L249.314072,6519.28247-->
+<!--            C248.899839,6519.67121 248.894661,6520.31179 249.302681,6520.70653 L257.196934,6528.32352 C257.601847,6528.71426-->
+<!--            257.601847,6529.34685 257.196934,6529.73759 L249.365851,6537.29462 C248.960938,6537.68437 248.960938,6538.31795-->
+<!--            249.365851,6538.70769" />-->
+<!--          </svg>-->
+        </div>
+        <div></div>
+      </button>
+    </div>
+  </div>
+</div>
+
