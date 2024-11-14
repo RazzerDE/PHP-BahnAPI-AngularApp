@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
 import {NgClass} from "@angular/common";
+import {SidebarMobileService} from "../../services/sidebar-mobile.service";
 
 @Component({
   selector: 'sidebar-page-item',
@@ -19,7 +20,7 @@ export class PageItemComponent implements OnInit {
   @Input() icon_path: string = '';
   @Input() site_name: string = '';
 
-  constructor(protected router: Router) {}
+  constructor(protected router: Router, protected sidebarService: SidebarMobileService) {}
 
   ngOnInit(): void {
     setTimeout(() => {

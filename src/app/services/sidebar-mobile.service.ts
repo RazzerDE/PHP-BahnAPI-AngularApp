@@ -22,6 +22,8 @@ export class SidebarMobileService {
    * Sets the state of the mobile menu to closed.
    */
   closeMobileMenu(): void {
-    this.isMobileMenuOpen = false
+    if (this.isMobileMenuOpen) {
+      this.isMobileMenuOpen = false
+    }
   }
 }
