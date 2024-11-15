@@ -24,3 +24,11 @@ body * {
 .cp-0\.5 {
   padding: .5rem .75rem;
 }
+
+.ml-7\.5 {
+  margin-left: 1.9rem;
+}
+
+.ml-0\.4 {
+  margin-left: 0.09rem;
+}
